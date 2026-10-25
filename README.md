@@ -95,7 +95,7 @@ A comprehensive data analysis project examining a used car dataset of over one m
 
 ### Advanced Formulas & Pivot Tables
 
-* **Data Retrieval & Cleaning**: Applied `XLOOKUP` and `COALESCE` formulas to handle missing records and merge vehicle specifications dynamically without modifying source data.
+* **Data Retrieval & Cleaning**: Applied `XLOOKUP`  formulas to handle missing records and merge vehicle specifications dynamically without modifying source data.
 * **Aggregations & Summaries**: Built interactive Pivot Tables using `AVERAGEIFS` and `SUMPRODUCT` to aggregate market prices across different car brands, registration years, and mileage brackets.
 * **KPI Formatting & Charts**: Created conditional formatting rules and custom charts to highlight key pricing trends, market share distribution, and depreciation metrics.
 
