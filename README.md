@@ -145,3 +145,11 @@ A comprehensive data analysis project examining a dataset of 1,000,000 used car 
 * **Total Rows:** ~1,000,000
 * **Total Columns:** 16
 * **Key Attributes:** Car Brands & Models, Engine CC, Horsepower, Registration Age, Pricing, and Mileage
+* https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/images/Screenshot%202026-09-01%20101353.png
+https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/images/Screenshot%202026-09-01%20101402.png
+https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/images/Screenshot%202026-09-01%20101530.png
+https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/images/Screenshot%202026-09-01%20101641.png
+https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/excel%20images/Screenshot%202026-09-01%20102705.png
+https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/excel%20images/Screenshot%202026-09-01%20102726.png
+https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/excel%20images/Screenshot%202026-09-01%20102754.png
+https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/excel%20images/Screenshot%202026-09-01%20102803.png
