@@ -1,155 +1,138 @@
-# Aliyan-Kahana-Portfolio-
-A comprehensive data analysis project examining a used car dataset of over one million rows processed via a single-file workflow, leveraging Python, SQL, Excel, and Power BI to uncover pricing trends, registration age distribution, brand market shares, and engine specifications.
+# Used Car Market Analysis
+A comprehensive data analysis project examining a used car dataset of over one million rows, leveraging Python, SQL, Excel, and Power BI to uncover pricing trends, registration age distribution, brand market shares, and engine specifications.
 ## 🐍 Python Data Pipeline & Preprocessing
 
-* **Jupyter Notebook**: [`used_car_price_prediction.ipynb`](./used_car_price_prediction.ipynb)contains data preprocessing, EDA, and feature engineering.
-* **Data Ingestion**: Efficiently loaded and processed a massive dataset containing over 1,000,000 rows into memory within a single-file workflow framework.
-* **Feature Engineering**: Transformed raw attributes into actionable metrics, such as calculating registration age and processing engine specifications for better statistical evaluation.
-* ## Data Cleaning & Preprocessing Pipeline
+* **Jupyter Notebook**: [`used_car_price_prediction.ipynb`](./used_car_price_prediction.ipynb) contains data cleaning, outlier checks (EDA), and missing-value handling.
+* **Data Ingestion**: Efficiently loaded and processed a massive dataset containing over 1,000,000 rows into memory using Pandas.
+* **Data Preparation**: Standardized text and numeric columns, converted invalid values to missing, filled missing engine specifications with group medians, and dropped unnecessary columns for better statistical evaluation.
 
-* `# Inspect data structure, non-null counts, and data types\ndf.info()`
-* `# Fix column names`
+## Data Cleaning & Preprocessing Pipeline
+
+* `# Inspect data structure, non-null counts, and data types: df.info()`
 * `# Remove duplicate rows`
 * `# Remove extra spaces`
 * `# Standardize text and numeric columns`
 * `# Fix spelling errors and inconsistent categories`
 * `# Fix data types`
 * `# Handle invalid values`
-* `# Handle missing values and outliers`
+* `# Handle missing values and check outliers`
 * `# Drop unnecessary columns`
-* `# Create new useful columns (feature engineering)`
 * `# Verify categories`
 * `# Check final dataset`
-# Used Cars Market Analysis & Price Prediction
+* `# Load the clean table into MySQL`
+
+# Used Cars Market Analysis
 
 ## Project Overview
-* **Description**: A comprehensive data analysis project examining a used car dataset of over one million rows processed via a single-file workflow.
-* **Objective**: Leverage Python to clean, analyze, and build predictive insights into pricing trends, registration age distribution, brand market shares, and engine specifications.
+* **Description**: A comprehensive data analysis project examining a used car dataset of over one million rows.
+* **Objective**: Leverage Python to clean and analyze the data, and uncover insights into pricing trends, registration age distribution, brand market shares, and engine specifications.
 
 ## Project Structure
-* **Main Script**: `used_car_price_prediction.ipynb` contains the core Jupyter Notebook for data preprocessing, exploratory data analysis (EDA), feature engineering, and model implementation.
+* **Main Script**: `used_car_price_prediction.ipynb` contains the core Jupyter Notebook for data cleaning, outlier checks (EDA), and loading the clean data into MySQL.
 
 ## Tech Stack & Libraries
 * **Language**: Python
 * **Data Manipulation & Cleaning**: Pandas, NumPy
 * **Data Visualization**: Matplotlib
+* **Database Connection**: SQLAlchemy, PyMySQL
 
 ## Key Features & Insights
-* **Large-Scale Processing**: Handled data processing for over 1,000,000 rows efficiently within a single-file workflow framework.
-* **Data Hygiene**: Cleaned and standardized raw string features, handled missing values, and managed outliers to ensure data integrity.
-* **Statistical Visualization**: Generated charts using Matplotlib to uncover key pricing determinants, depreciation trends, and dominant automotive brand shares.
+* **Large-Scale Processing**: Handled data processing for over 1,000,000 rows efficiently using Pandas.
+* **Data Hygiene**: Cleaned and standardized raw string features, handled missing values, and checked outliers to ensure data integrity.
+* **Statistical Visualization**: Generated charts using Matplotlib to show category distributions and outlier counts across fuel type, brand, registration age, transmission, and model.
 
 ## Usage
-* **Clone Repository**: `git clone https://github.com/aliyan-kahana/Aliyan-Kahana-Portfolio.git`
+* **Clone Repository**: `git clone https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis.git`
 * **Run Environment**: Launch Jupyter Notebook using `jupyter notebook used_car_price_prediction.ipynb`
 ## 🛢️ SQL Data Analysis & Business Queries
 
 * **SQL Script**: [`cars.sql`](./cars.sql)
+* **Database**: MySQL (table `cars`, loaded from Python)
 
 ## Query Capabilities & Business Logic
 - **Aggregations & Filtering**: Used `COUNT`, `AVG`, `GROUP BY`, and `HAVING` to find the number of cars and average price per brand, and fuel types with average mileage above 18 kmpl.
 - **Conditional Logic**: Used `CASE WHEN` to classify cars into No Risk, Low Risk, and High Risk based on accident history.
 - **Window Functions**: Used `ROW_NUMBER`, `DENSE_RANK`, `AVG() OVER`, and `NTILE` to find the top 2 priciest cars per brand, rank cities by listings, compare each car's price to its city average, and split prices into quartiles by owner type.
 - **CTEs**: Used `WITH` to find brands with above-average horsepower, compare automatic vs. manual prices for each model, and count missing values.
-* **Type**: Distributed under the MIT License (see `LICENSE` for details).
 ## 📊 Power BI Interactive Dashboards & Analytics
 
 * **Dashboard Overview**: Comprehensive visual analysis tracking pricing trends, registration age, brand market shares, and engine specifications for used cars.
 
 ## Key Power BI Features & Modeling
 
-* **Data Modeling & DAX**: Built custom DAX measures for Average Car Price, Total Vehicle Count, Price-to-Mileage Ratios, and Year-over-Year depreciation trends.
-* **Interactive Filtering & Slicers**: Enabled dynamic cross-filtering by car brand, model year, fuel type, transmission, and body style.
-* **Executive Visualizations**: Designed custom visual layouts highlighting market pricing drivers, regional distribution, and top-selling brand configurations.
-* ## 📈 Excel Analytics & Market Reporting
+* **Data Modeling & DAX**: Built KPI measures for Total Listings, Average Price, Average Kms Driven, Average Age, Average Horsepower, Average Engine CC, Average Mileage, First Owner Count, Accident Free %, Active Models Count, and Active Cities Count.
+* **Interactive Filtering & Slicers**: Enabled dynamic cross-filtering by city, fuel type, transmission, registration age, brand/model, owner type, accidents, seats, and number of doors.
+* **Executive Visualizations**: Designed custom visual layouts highlighting price trends by registration age, the impact of accidents on price, regional distribution, and brand-level listings and prices.
 
-* **Excel File**: [Download Used Cars Analysis Excel File](https://drive.google.com/uc?export=download&id=1rFVI-xMbblhBJ3QsIJj-b6ml6cCaoiYc)
-### Advanced Formulas & Pivot Tables
+## Key Insights
 
-* **Data Retrieval & Cleaning**: Applied `XLOOKUP` and `COALESCE` formulas to handle missing records and merge vehicle specifications dynamically without modifying source data.
-* **Aggregations & Summaries**: Built interactive Pivot Tables using `AVERAGEIFS` and `SUMPRODUCT` to aggregate market prices across different car brands, registration years, and mileage brackets.
-* **KPI Formatting & Charts**: Created conditional formatting rules and custom charts to highlight key pricing trends, market share distribution, and depreciation metrics.
-* ## Key Insights
-
-* **Executive Pricing & Depreciation**: Tracked 1,000,000 used car listings showing an average valuation of 1.01M, highlighting a steady price depreciation curve against vehicle registration age.
+* **Executive Pricing & Depreciation**: Tracked 1,000,000 used car listings showing an average valuation of 1.01M, highlighting a steady price depreciation curve against vehicle registration age (about 1.59M for 1-year-old cars to about 0.53M for 25-year-old cars).
 * **Engine & Performance Metrics**: Analyzed engine specifications across 39 active models, recording an average horsepower of 120.54 and 1.51K engine CC mapped across different fuel types and brands.
-* **Vehicle Condition & Ownership**: Evaluated accident history and ownership impact, revealing that first-owner cars make up 599K listings and accident-free vehicles maintain a higher average valuation.
-* **Regional Inventory Distribution**: Mapped inventory across 9 active cities (including Delhi, Hyderabad, and Mumbai), detailing regional volume and brand-level market shares.
+* **Vehicle Condition & Ownership**: Evaluated accident history and ownership impact, revealing that first-owner cars make up 599K listings and accident-free vehicles (741K listings) maintain a higher average valuation (about 1.02M with 0 accidents vs. about 0.65M with 5 accidents).
+* **Regional Inventory Distribution**: Mapped inventory across 8 cities (including Delhi, Hyderabad, and Mumbai, plus 80,000 listings with an unknown city), detailing regional volume and brand-level listings.
 
 ## Dashboard Screenshots
 
 ### 1. Executive Overview and Price Dynamics
-![Executive Overview](./images/Screenshot%202026-09-01%20101353.png)
+![Executive Overview](https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/raw/main/images/Screenshot%202026-09-01%20101353.png)
 
 ### 2. Engine & Performance Specifications
-![Engine & Performance](./images/Screenshot%202026-09-01%20101402.png)
+![Engine & Performance](https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/raw/main/images/Screenshot%202026-09-01%20101402.png)
 
 ### 3. Vehicle Feature and Condition Analysis
-![Vehicle Feature and Condition](./images/Screenshot%202026-09-01%20101530.png)
+![Vehicle Feature and Condition](https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/raw/main/images/Screenshot%202026-09-01%20101530.png)
 
 ### 4. Used Car Inventory & Regional Price Overview
-![Inventory & Regional Overview](./images/Screenshot%202026-09-01%20101641.png)
-📊 Excel Analysis & Dashboards
-
-* **Excel File**: [Download Used Cars Analysis Excel File](https://drive.google.com/uc?export=download&id=1rFVI-xMbblhBJ3QsIJj-b6ml6cCaoiYc)
-
-### Advanced Formulas & Pivot Tables
-
-* **Data Retrieval & Cleaning**: Applied `XLOOKUP`  formulas to handle missing records and merge vehicle specifications dynamically without modifying source data.
-* **Aggregations & Summaries**: Built interactive Pivot Tables using `AVERAGEIFS` and `SUMPRODUCT` to aggregate market prices across different car brands, registration years, and mileage brackets.
-* **KPI Formatting & Charts**: Created conditional formatting rules and custom charts to highlight key pricing trends, market share distribution, and depreciation metrics.
+![Inventory & Regional Overview](https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/raw/main/images/Screenshot%202026-09-01%20101641.png)
 
 # Used Car Market Data Analysis & Intelligence Portfolio
 
-A comprehensive data analysis project examining a dataset of 1,000,000 used car records. This repository covers end-to-end data manipulation, SQL database queries, advanced Excel financial modeling and pivot analysis, and interactive Power BI executive dashboards.
+A comprehensive data analysis project examining a dataset of 1,000,000 used car records. This repository covers end-to-end data manipulation, SQL database queries, Excel pivot analysis, and interactive Power BI executive dashboards.
 
 ---
 
 ## 🛠️ Tech Stack & Tools
 
 * **Python**: Data preprocessing, cleaning, text standardization, and missing value handling using Pandas, NumPy, and Matplotlib.
-* **SQL**: Database management and complex queries (CTEs, window functions, subqueries, and multi-table joins) executed via SQLite and MySQL Workbench.
-* **Microsoft Excel**: Advanced formulas (`XLOOKUP`, `INDEX/MATCH`, `AVERAGEIFS`, `SUMPRODUCT`, `IF/OR`), Pivot Tables, and interactive charts.
-* **Power BI**: Multi-page interactive executive dashboards featuring custom DAX measures, KPI cards, and dynamic navigation.
+* **SQL**: Database queries (aggregations, `CASE WHEN`, CTEs, and window functions) executed in MySQL.
+* **Microsoft Excel**: Formulas (`XLOOKUP`, `INDEX/MATCH`, `AVERAGEIFS`, `SUMPRODUCT`, `IF/OR`), Pivot Tables, and interactive charts.
+* **Power BI**: 4-page interactive executive dashboards featuring KPI measures and slicers.
 
 ---
 
-📊 Dataset & Schema
+## 📊 Dataset & Schema
 
-* **Data Overview**: Processed a unified dataset containing 1,000,000 used car listings and vehicle reference attributes.
+* **Data Overview**: Processed a single dataset containing 1,000,000 used car listings across 16 columns.
 * **File Access**: [Download Used Cars Analysis Excel File](https://drive.google.com/uc?export=download&id=1rFVI-xMbblhBJ3QsIJj-b6ml6cCaoiYc)
 
 ---
 
-📊 Excel Analysis & Dashboards
+## 📊 Excel Analysis & Dashboards
 
-* **Data Retrieval & Cleaning**: Applied `XLOOKUP`, `INDEX/MATCH`, and `VLOOKUP` to dynamically merge vehicle lookup tables and specifications without altering source inputs.
-* **Aggregations & Summaries**: Built multi-variable Pivot Tables utilizing `AVERAGEIFS`, `SUMPRODUCT`, `COUNTIFS`, and `SUMIFS` to analyze pricing metrics across brands, registration ages, and mileage brackets.
-* **Risk Modeling & Formatting**: Implemented conditional formatting rules and logical formulas (`IF`, `OR`) to categorize high-risk listings based on accident counts and mileage thresholds.
+* **Data Retrieval**: Applied `XLOOKUP`, `INDEX/MATCH`, and `VLOOKUP` to retrieve values from the dataset without altering source inputs.
+* **Aggregations & Summaries**: Built Pivot Tables to analyze pricing metrics across brands, cities, registration age, and kms-driven brackets. Used `AVERAGEIFS`, `COUNTIFS`, and `SUMPRODUCT` formulas for targeted calculations, such as the average price of petrol BMWs and the number of Delhi cars with 0 accidents.
+* **Risk Flag**: Used a logical formula (`IF`, `OR`) to mark cars with more than 2 accidents or more than 300,000 kms driven as High Risk.
 
 ### Excel Screenshots
 
-#### 2. Advanced Formulas & Calculations
-![Formulas Preview](./excel%20images/Screenshot%202026-09-01%20102705.png)
+#### 1. Advanced Formulas & Calculations
+![Formulas Preview](https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/raw/main/excel%20images/Screenshot%202026-09-01%20102705.png)
 
-#### 3. Pivot Tables & Summary Layouts (Part 1)
-![Pivot Tables 1 Preview](./excel%20images/Screenshot%202026-09-01%20102726.png)
+#### 2. Pivot Tables & Summary Layouts (Part 1)
+![Pivot Tables 1 Preview](https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/raw/main/excel%20images/Screenshot%202026-09-01%20102726.png)
 
-#### 4. Pivot Tables & Summary Layouts (Part 2)
-![Pivot Tables 2 Preview](./excel%20images/Screenshot%202026-09-01%20102754.png)
+#### 3. Pivot Tables & Summary Layouts (Part 2)
+![Pivot Tables 2 Preview](https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/raw/main/excel%20images/Screenshot%202026-09-01%20102754.png)
 
-#### 5. Advanced Pivot Charts & Distributions
-![Pivot Charts Preview](./excel%20images/Screenshot%202026-09-01%20102803.png)
+#### 4. Advanced Pivot Charts & Distributions
+![Pivot Charts Preview](https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/raw/main/excel%20images/Screenshot%202026-09-01%20102803.png)
+
 ## Key Metrics
 
 * **Total Rows:** ~1,000,000
 * **Total Columns:** 16
 * **Key Attributes:** Car Brands & Models, Engine CC, Horsepower, Registration Age, Pricing, and Mileage
-* https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/images/Screenshot%202026-09-01%20101353.png
-https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/images/Screenshot%202026-09-01%20101402.png
-https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/images/Screenshot%202026-09-01%20101530.png
-https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/images/Screenshot%202026-09-01%20101641.png
-https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/excel%20images/Screenshot%202026-09-01%20102705.png
-https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/excel%20images/Screenshot%202026-09-01%20102726.png
-https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/excel%20images/Screenshot%202026-09-01%20102754.png
-https://github.com/Aliyan-Kahana/Aliyan-Kahana-used-car-market-analysis/blob/main/excel%20images/Screenshot%202026-09-01%20102803.png
+
+## License
+
+* **Type**: Distributed under the MIT License (see `LICENSE` for details).
