@@ -47,11 +47,10 @@ A comprehensive data analysis project examining a used car dataset of over one m
 * **SQL Script**: [`cars.sql`](./cars.sql)
 
 ## Query Capabilities & Business Logic
-
-* **Multi-Table Joins**: Executed multi-level `JOIN` operations across customer, order, order item, and product tables.
-* **Advanced Aggregations**: Applied `SUM()`, `COUNT()`, `AVG()`, and grouping logic to calculate regional revenues, average order values, and category price-to-freight ratios.
-* **CTE & Subqueries**: Used Common Table Expressions (`WITH`) and subqueries to structure top/bottom product category rankings and total order calculations.
-## License
+- **Aggregations & Filtering**: Used `COUNT`, `AVG`, `GROUP BY`, and `HAVING` to find the number of cars and average price per brand, and fuel types with average mileage above 18 kmpl.
+- **Conditional Logic**: Used `CASE WHEN` to classify cars into No Risk, Low Risk, and High Risk based on accident history.
+- **Window Functions**: Used `ROW_NUMBER`, `DENSE_RANK`, `AVG() OVER`, and `NTILE` to find the top 2 priciest cars per brand, rank cities by listings, compare each car's price to its city average, and split prices into quartiles by owner type.
+- **CTEs**: Used `WITH` to find brands with above-average horsepower, compare automatic vs. manual prices for each model, and count missing values.
 * **Type**: Distributed under the MIT License (see `LICENSE` for details).
 ## 📊 Power BI Interactive Dashboards & Analytics
 
